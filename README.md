@@ -20,11 +20,22 @@ I created this programme as part of a challenge at [Makers Academy](https://gith
 1. Fork this repo, and clone to your local machine. Navigate into the folder.
 2. Open `index.html` in your browser
 
-## Useage ##
+## How to play ##
 
-- where to use
-- example code
-- example output
+### Scoring ###
+
+There are 10 turns(frames) in a game. In each game you get two rolls. Enter your two rolls and click to submit. The scorecard will store your rolls and calculate your score using the following rules.
+
+In [traditional scoring](https://en.wikipedia.org/wiki/Ten-pin_bowling#Traditional_scoring), one point is scored for each pin that is knocked over, and when less than all ten pins are knocked down in two rolls in a frame, the frame is scored with the total number of pins knocked down. However, when all ten pins are knocked down with either the first or second rolls of a frame, bonus pins are awarded as follows:
+
+- **Strike:** When all ten pins are knocked down on the first roll (marked "X" on the scoresheet), the frame receives ten pins plus a bonus of pinfall on the next two rolls (not necessarily the next two frames). A strike in the tenth (final) frame receives two extra rolls for bonus pins.
+
+- **Spare:** When a second roll of a frame is needed to knock down all ten pins (marked "/" on the scoresheet), the frame receives ten pins plus a bonus of pinfall in the next roll (not necessarily the next frame). A spare in the first two rolls in the tenth (final) frame receives a third roll for bonus pins.
+
+### Special games ###
+
+- **Gutter game**: when the player never hits a pin (20 zero scores)
+- **Perfect game**: when the player rolls 12 strikes (10 regular strikes and 2 strikes for the bonus in the 10th frame). The Perfect Game scores 300 points.
 
 ## Running tests ##
 
@@ -35,7 +46,9 @@ I created this programme as part of a challenge at [Makers Academy](https://gith
 See original challenge instructions [here](Challenge-instructions.md)
 
 ### User Stories ###
-​
+
+Developed from challenge instructions.​
+
 ```
 As a bowler,
 To keep track of my scores,
@@ -70,30 +83,44 @@ To get as many points as possible,
 I would like to have a bonus roll if I score 10 on the 10th turn
 ```
 
-### Scoring ###
-
-In [traditional scoring](https://en.wikipedia.org/wiki/Ten-pin_bowling#Traditional_scoring), one point is scored for each pin that is knocked over, and when less than all ten pins are knocked down in two rolls in a frame (an open frame, the frame is scored with the total number of pins knocked down. However, when all ten pins are knocked down with either the first or second rolls of a frame (a mark), bonus pins are awarded as follows:
-
-- **Strike:** When all ten pins are knocked down on the first roll (marked "X" on the scoresheet), the frame receives ten pins plus a bonus of pinfall on the next two rolls (not necessarily the next two frames). A strike in the tenth (final) frame receives two extra rolls for bonus pins.
-
-- **Spare:** When a second roll of a frame is needed to knock down all ten pins (marked "/" on the scoresheet), the frame receives ten pins plus a bonus of pinfall in the next roll (not necessarily the next frame). A spare in the first two rolls in the tenth (final) frame receives a third roll for bonus pins.
-
-### Special games ###
-
-- **Gutter game**: when the player never hits a pin (20 zero scores)
-- **Perfect game**: when the player rolls 12 strikes (10 regular strikes and 2 strikes for the bonus in the 10th frame). The Perfect Game scores 300 points.
-
 ## How I built it ##
 
-### Domain modelling ###
+### Objects ###
 
-### Object tables ###
+I roughly diagrammed each object required, its attributes, methods and events needed.
 
-### Designing Tests ###
 
-When planning my code I thought about the tests I might need, and tried to order them by simplicity
+  | 1            |**Game**|
+  |--------------|--------|
+  |**Attributes**|turn    |
+  |**Methods**   |play    |
+  
+  
 
-#### Feature tests ####
+  | 2             |**Frame**|        |          |     | 
+  |---------------|---------|--------|----------|-----|
+  |**Attributes**|roll1    |roll2   |totalScore|bonus|
+  |**Methods**   |getRolls |getScore|Strike    |Spare|
+
+  
+
+  | 3             |**Scorecard**|          |
+  |---------------|-------------|          |
+  |**Attributes** |score        |turn      |
+  |**Methods**    |outputScore  |enterScore|
+
+  
+
+  |4          |**Interface**|          |
+  |-----------|-------------|----------|
+  |**Events** |clickSubmit  |finish    |
+  |**Methods**|updateScore  |updateTurn|
+
+### Designing Tests 
+
+When planning my code I thought about the tests I might need, and tried to order them by simplicity.
+
+#### Feature tests
 
 - One frame
 - Multiple frames
@@ -102,20 +129,24 @@ When planning my code I thought about the tests I might need, and tried to order
 - Strikes
 - Final Frame
 
-#### Unit tests ####
+#### Unit tests
 
-### Thinking about UI ##
+### Thinking about UI
 
 When planning out user interaction and the scoring system, it was helpful to roughly sketch out the UI. Mobile design developed for fun (and an additional challenge).
 
-__Score card and user input__
+#### Score card and user input
+
+User enters scores and clicks submit. Interface updates turn, prints rolls and calculates score.
 
 ![Scorecard table and user-input model](images/excalidraw-bowling-UI.png)
 
-__Mobile UI__
+#### Mobile UI
+
+Scorecard and user-input arranged to 7x4 grid.
 
 ![Scorecard and user-input modelled in mobile layout](images/excalidraw-bowling-mobileUI.png)
 
-## Credits ##
+## Credits
 
 User stories and initial UI design developed in a brain storming session with fellow Makers coder [David McGregor](https://github.com/davmcgregor/)
