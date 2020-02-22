@@ -8,7 +8,7 @@ I created this programme as part of a challenge at [Makers Academy](https://gith
 
 
 * [Getting started](#Getting-Started)
-* [Useage](#useage)
+* [How to play](#How-to-play)
 * [Running tests](#Running-tests)
 * [Specification](#Specification)
 * [How I built it](#How-i-built-it)
@@ -105,7 +105,7 @@ I roughly diagrammed each object required, its attributes, methods and events ne
   
 
   | 3             |**Scorecard**|          |
-  |---------------|-------------|          |
+  |---------------|-------------|----------|
   |**Attributes** |score        |turn      |
   |**Methods**    |outputScore  |enterScore|
 
