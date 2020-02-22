@@ -1,6 +1,6 @@
 # Bowling-Challenge #
 
-The screens are down at the local bowling alley and this programme helps a bowler keep track of their score. It's a one-player score card, so each player will need to run their own app.
+The screens are down at the local bowling alley and this programme is here to help you keep track of your score so you can still play the game. It's a one-player score card, so each player will need to run their own app.
 
 *Tech used*
 
@@ -106,7 +106,7 @@ When planning my code I thought about the tests I might need, and tried to order
 
 ### Thinking about UI ##
 
-When planning out user interaction, and the scorecard system it was helpful to roughly sketch out the UI. Mobile design developed for fun (and an additional challenge).
+When planning out user interaction and the scoring system, it was helpful to roughly sketch out the UI. Mobile design developed for fun (and an additional challenge).
 
 __Score card and user input__
 
@@ -118,4 +118,4 @@ __Mobile UI__
 
 ## Credits ##
 
-User stories and first UI design developed in a brain storming session with fellow Makers coder [David McGregor](https://github.com/davmcgregor/)
+User stories and initial UI design developed in a brain storming session with fellow Makers coder [David McGregor](https://github.com/davmcgregor/)
