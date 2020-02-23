@@ -90,25 +90,16 @@ I would like to have a bonus roll if I score 10 on the 10th turn
 I roughly diagrammed each object required, its attributes, methods and events needed.
 
 
-  | 1            |**Game**|
-  |--------------|--------|
-  |**Attributes**|turn    |
-  |**Methods**   |play    |
-  
-  
+  | 1            |**Game**| |
+  |--------------|--------|-|
+  |**Attributes**|turn    |score||
+  |**Methods**   |play    |getScore|enterRolls|
+
 
   | 2             |**Frame**|        |          |     | 
   |---------------|---------|--------|----------|-----|
   |**Attributes**|roll1    |roll2   |totalScore|bonus|
   |**Methods**   |getRolls |getScore|Strike    |Spare|
-
-  
-
-  | 3             |**Scorecard**|          |
-  |---------------|-------------|----------|
-  |**Attributes** |score        |turn      |
-  |**Methods**    |outputScore  |enterScore|
-
   
 
   |4          |**Interface**|          |
